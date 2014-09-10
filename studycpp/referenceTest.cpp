@@ -1,5 +1,6 @@
 #include <iostream>
-
+#include "stringStudy.h"
+//header shouldnot include using declaration
 using namespace std;
 
 
@@ -56,7 +57,7 @@ void func_theUseOfdecltype()
 	*/
 	
 	int a = 1;
-	int b = 2;
+	int b1 = 2;
 	//decltype(a = b) c;
 	//error decltype(a=b) is the type: int &
 	//so it must be initialized
@@ -80,11 +81,45 @@ int main()
 	cout << *p2 << endl;
 	cout << &i << " " << p1 << " " << &r << endl;
 	//int &r1 = 3;
-	constexpr int *const_p = &global_i;// constexpr如果修饰的是指针则指针本身的地址为const，注意右值的地址必须为fixed。
+	/*
+	vs2013中不支持 constexpr
+	详情参阅
+	http://msdn.microsoft.com/en-us/library/vstudio/hh567368.aspx
+	*/
+	//constexpr int conexpr = 2;
+	//constexpr int *const_p = &global_i;// constexpr如果修饰的是指针则指针本身的地址为const，注意右值的地址必须为fixed。
+	//const int *p = nullptr;// p is a pointer to a const int
+	//constexpr int *q = nullptr; // q is a const pointer to int
+
 	//int null = 0, *p_null = null;
 	cout << "testReference!" << endl;
-	auto f = [](){cout << "this is fun";  };
+
+
+
+	/*
+	
+	string test!
+	
+	*/
+	sizeAndLength();
+	//NormalUseOfString();
+	//UseOfGetLine();
+
+
+
+
+
+
+
+
+
+
+
+
+	auto f = [](){cout << "this is fun";  };//lambda
 	f();
 	int wait;
+	cout << "input any key to exit!" << endl;
 	cin >> wait;
+	return 0;
 }
