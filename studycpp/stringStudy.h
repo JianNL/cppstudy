@@ -41,3 +41,41 @@ void UseOfGetLine()
 		cout << line << endl;
 	}
 }
+
+
+void mixString()
+{
+	/*
+	When we mix strings and string or character literals, at least one operand to each
+	+ operator must be of string type:
+	*/
+	string s1 = "hello";
+	string s4 = s1 + ", ";// ok: adding a string and a literal
+	//string s5 = "hello" + ", ";// error: no string operand
+	string s6 = s1 + ", " + "world"; // ok: each + has a string operand
+	//string s7 = "hello" + ", " + s2; // error: can¡¯t add string literals
+
+}
+
+
+void newFor()
+{
+	string str("hello world!");
+	for (auto c : str)
+	{
+		cout << c << endl;
+	}
+	for (auto &c : str)
+	{
+		c = toupper(c);
+	}
+	cout << str << endl;
+}
+
+
+void SubscriptOfString()
+{
+	string str = "helloworld";
+	cout << str[0] << endl;
+	str[1] = '1';//the subscript operator return a reference
+}

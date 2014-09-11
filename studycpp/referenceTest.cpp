@@ -101,9 +101,10 @@ int main()
 	string test!
 	
 	*/
-	sizeAndLength();
+	//sizeAndLength();
 	//NormalUseOfString();
 	//UseOfGetLine();
+	newFor();
 
 
 
@@ -116,7 +117,7 @@ int main()
 
 
 
-	auto f = [](){cout << "this is fun";  };//lambda
+	auto f = [](){cout << "this is fun" << endl;  };//lambda
 	f();
 	int wait;
 	cout << "input any key to exit!" << endl;
