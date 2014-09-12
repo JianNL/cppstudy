@@ -69,6 +69,7 @@
   <ItemGroup>
     <ClInclude Include="securityFun.h" />
     <ClInclude Include="stringStudy.h" />
+    <ClInclude Include="useOfArray.h" />
     <ClInclude Include="vectorStudy.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

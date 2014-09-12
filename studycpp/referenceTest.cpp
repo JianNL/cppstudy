@@ -2,6 +2,7 @@
 #include "stringStudy.h"
 #include "vectorStudy.h"
 #include "securityFun.h"
+#include "useOfArray.h"
 //header shouldnot include using declaration
 using namespace std;
 
@@ -99,19 +100,15 @@ int main()
 
 
 	/*
-	
 	string test!
-	
 	*/
 	//sizeAndLength();
 	//NormalUseOfString();
 	//UseOfGetLine();
 	//newFor();
-
+	useOfc_strString();
 	/*
-
 	string test!
-
 	*/
 
 
@@ -119,14 +116,8 @@ int main()
 	/*
 	vector test!
 	*/
-	normaluseOfVector();
+	//normaluseOfVector();
 	
-
-
-
-
-
-
 	/*
 	vector test!
 	*/
@@ -135,9 +126,21 @@ int main()
 	/*
 	security function
 	*/
-	cout << "use of strcpy_s()" << endl;
-	useOfstrcpy_s();
+	//cout << "use of strcpy_s()" << endl;
+	//useOfstrcpy_s();
+	/*
+	security function
+	*/
 
+	/*
+	array
+	*/
+	//cout << "test array" << endl;
+	//copyOrAssignmentOfArray();
+	//beginAndendFunc();
+	/*
+	array
+	*/
 
 
 

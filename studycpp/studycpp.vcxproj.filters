@@ -24,6 +24,9 @@
     <ClInclude Include="securityFun.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="useOfArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="referenceTest.cpp">

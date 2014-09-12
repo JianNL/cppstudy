@@ -80,3 +80,22 @@ void SubscriptOfString()
 	cout << str[0] << endl;
 	str[1] = '1';//the subscript operator return a reference
 }
+
+
+
+
+void useOfc_strString()
+{
+	/*
+	The array returned by c_str is not guaranteed to be valid indefinitely. Any
+	subsequent use of s that might change the value of s can invalidate this array.
+	*/
+	cout << "useOfc_strString" << endl;
+	string str("helloworld");
+	const char *cstr = str.c_str();
+	cout << "const char *cstr" << " " << cstr << endl;
+	str[0] = '0';
+	cout << "after is" << endl;
+	cout << cstr << endl;
+
+}
