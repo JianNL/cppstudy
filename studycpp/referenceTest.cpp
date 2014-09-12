@@ -1,5 +1,7 @@
 #include <iostream>
 #include "stringStudy.h"
+#include "vectorStudy.h"
+#include "securityFun.h"
 //header shouldnot include using declaration
 using namespace std;
 
@@ -104,15 +106,37 @@ int main()
 	//sizeAndLength();
 	//NormalUseOfString();
 	//UseOfGetLine();
-	newFor();
+	//newFor();
+
+	/*
+
+	string test!
+
+	*/
+
+
+
+	/*
+	vector test!
+	*/
+	normaluseOfVector();
+	
 
 
 
 
 
 
+	/*
+	vector test!
+	*/
 
 
+	/*
+	security function
+	*/
+	cout << "use of strcpy_s()" << endl;
+	useOfstrcpy_s();
 
 
 

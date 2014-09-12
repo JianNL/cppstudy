@@ -67,7 +67,9 @@
     <ClCompile Include="referenceTest.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="securityFun.h" />
     <ClInclude Include="stringStudy.h" />
+    <ClInclude Include="vectorStudy.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

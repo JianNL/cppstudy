@@ -60,6 +60,7 @@ void mixString()
 
 void newFor()
 {
+
 	string str("hello world!");
 	for (auto c : str)
 	{

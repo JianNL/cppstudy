@@ -18,6 +18,12 @@
     <ClInclude Include="stringStudy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="vectorStudy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="securityFun.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="referenceTest.cpp">
