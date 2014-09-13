@@ -64,9 +64,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="referenceTest.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="referenceTest.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="lvalueAndrvalue.h" />
     <ClInclude Include="securityFun.h" />
     <ClInclude Include="stringStudy.h" />
     <ClInclude Include="useOfArray.h" />

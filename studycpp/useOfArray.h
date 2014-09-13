@@ -106,3 +106,21 @@ void beginAndendFunc()
 	cout << *beg << *(last-1)<< endl;
 }
 
+
+
+void useOfMultidimensionalArray()
+{
+	int ia[3][4] = { { 1, 2, 3, 4 }, { 1, 2, 3, 4 }, { 1, 2, 3, 4 } };
+	/*
+	To use a multidimensional array in a range for, the loop control vari-
+	able for all but the innermost array must be references.
+	*/
+	for (const auto &row:ia)
+	{
+		for (auto col:row)
+		{
+			cout << col << " ";
+		}
+		cout << endl;
+	}
+}

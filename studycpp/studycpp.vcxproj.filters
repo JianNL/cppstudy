@@ -27,10 +27,16 @@
     <ClInclude Include="useOfArray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="lvalueAndrvalue.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="referenceTest.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="referenceTest.h">
+      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
