@@ -30,6 +30,15 @@
     <ClInclude Include="lvalueAndrvalue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="decltypeStudy.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="arithmeticOperate.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeConversion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

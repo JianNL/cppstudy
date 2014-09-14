@@ -5,6 +5,10 @@
       <Configuration>Debug</Configuration>
       <Platform>Win32</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="ff|Win32">
+      <Configuration>ff</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Release|Win32">
       <Configuration>Release</Configuration>
       <Platform>Win32</Platform>
@@ -27,6 +31,9 @@
     <PlatformToolset>v120</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='ff|Win32'">
+    <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -68,9 +75,12 @@
     <ClCompile Include="referenceTest.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="arithmeticOperate.h" />
+    <ClInclude Include="decltypeStudy.h" />
     <ClInclude Include="lvalueAndrvalue.h" />
     <ClInclude Include="securityFun.h" />
     <ClInclude Include="stringStudy.h" />
+    <ClInclude Include="TypeConversion.h" />
     <ClInclude Include="useOfArray.h" />
     <ClInclude Include="vectorStudy.h" />
   </ItemGroup>

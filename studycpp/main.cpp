@@ -3,7 +3,14 @@
 #include "vectorStudy.h"
 #include "securityFun.h"
 #include "useOfArray.h"
-#include "referenceTest.h"
+//#include "referenceTest.h"
+#include "arithmeticOperate.h"
+#include "TypeConversion.h"
+
+
+
+
+
 //header shouldnot include using declaration
 using namespace std;
 
@@ -108,6 +115,25 @@ int main()
 	array
 	*/
 
+
+
+	/*
+	arithmeticOperate
+	*/
+
+	//wrappedaround();
+	//useOfRelationalOperator();
+	/*
+	arithmeticOperate
+	*/
+
+
+
+	/*
+	typeconversion
+	*/
+	//useOfconst_cast();
+	useOfNullStatement();
 
 
 	auto f = [](){cout << "this is fun" << endl;  };//lambda

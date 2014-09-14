@@ -59,6 +59,8 @@ void normalUseOfArray()
 	int *p1 = a3 + 3;
 	int *p2 = a3 + 4;
 	int *p4 = a3 + 5;
+	int arrays[10];
+	//array是 int *类型 而 &arrays是指向整个数组的指针。
 
 
 }
