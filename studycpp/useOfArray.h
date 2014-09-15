@@ -62,6 +62,7 @@ void normalUseOfArray()
 	int arrays[10];
 	//array是 int *类型 而 &arrays是指向整个数组的指针。
 
+	//int &arrays1[10];
 
 }
 

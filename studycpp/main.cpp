@@ -6,6 +6,7 @@
 //#include "referenceTest.h"
 #include "arithmeticOperate.h"
 #include "TypeConversion.h"
+#include "Function.h"
 
 
 
@@ -133,7 +134,19 @@ int main()
 	typeconversion
 	*/
 	//useOfconst_cast();
-	useOfNullStatement();
+	//useOfNullStatement();
+
+	/*
+	typeconversion
+	*/
+
+
+	/*
+	function
+	*/
+	useOfinitializer_list({ "fsdfsfsdf", "sdfsdfsfddsf", "helloworld" });
+
+
 
 
 	auto f = [](){cout << "this is fun" << endl;  };//lambda
