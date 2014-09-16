@@ -7,6 +7,7 @@
 #include "arithmeticOperate.h"
 #include "TypeConversion.h"
 #include "Function.h"
+#include "sudoku.h"
 
 
 
@@ -91,6 +92,7 @@ int main()
 	vector test!
 	*/
 	//normaluseOfVector();
+	//useOfremove_if();
 	
 	/*
 	vector test!
@@ -121,7 +123,7 @@ int main()
 	/*
 	arithmeticOperate
 	*/
-
+	//normalArithmetic();
 	//wrappedaround();
 	//useOfRelationalOperator();
 	/*
@@ -144,8 +146,52 @@ int main()
 	/*
 	function
 	*/
-	useOfinitializer_list({ "fsdfsfsdf", "sdfsdfsfddsf", "helloworld" });
+	//useOfinitializer_list({ "fsdfsfsdf", "sdfsdfsfddsf", "helloworld" });
+	//vector<int> vec1 = { 1, 2, 3, 4, 5 };
+	//useOfvectorPara(vec1);
+	//for (auto e:vec1)
+	//{
+		//cout << e << endl;
+	//}
+	/*
+	function
+	*/
+	
+	/*
+	sudoku
+	*/
+	/*
+	vector<vector<int> > s = {
+		{ 2, 7, 6, 0, 0, 0, 0, 8, 0 },
+		{ 3, 0, 0, 8, 0, 0, 0, 1, 5 },
+		{ 5, 0, 0, 2, 0, 9, 7, 0, 0 },
+		{ 0, 8, 2, 3, 0, 0, 4, 0, 0 },
+		{ 0, 0, 0, 0, 5, 0, 0, 0, 0 },
+		{ 0, 0, 1, 0, 0, 4, 3, 6, 0 },
+		{ 0, 0, 4, 5, 0, 8, 0, 0, 7 },
+		{ 1, 6, 0, 0, 0, 3, 0, 0, 4 },
+		{ 0, 3, 0, 0, 0, 0, 5, 2, 1 }
+	};
+	vector<vector<int> > s1 = {
+		{ 8, 0, 0, 0, 0, 0, 0, 0, 0 },
+		{ 0, 0, 3, 6, 0, 0, 0, 0, 0 },
+		{ 0, 7, 0, 0, 9, 0, 2, 0, 0 },
+		{ 0, 5, 0, 0, 0, 7, 0, 0, 0 },
+		{ 0, 0, 0, 0, 4, 5, 7, 0, 0 },
+		{ 0, 0, 0, 1, 0, 0, 0, 3, 0 },
+		{ 0, 0, 1, 0, 0, 0, 0, 6, 8 },
+		{ 0, 0, 8, 5, 0, 0, 0, 1, 0 },
+		{ 0, 9, 0, 0, 0, 0, 4, 0, 0 }
+	};
+	*/
 
+	//useOfcomplicatedVectorPara(s);
+	//printOfcomplicatedVectorPara(s);
+	//sudoku solution;
+	//solution.printSolution(s);
+	//solution.getSolution(s1);
+	//cout << "the solution is" << endl;
+	//solution.printSolution();
 
 
 

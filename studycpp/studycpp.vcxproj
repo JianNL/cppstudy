@@ -73,6 +73,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="referenceTest.h" />
+    <ClCompile Include="sudoku.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="arithmeticOperate.h" />
@@ -82,6 +83,7 @@
     <ClInclude Include="lvalueAndrvalue.h" />
     <ClInclude Include="securityFun.h" />
     <ClInclude Include="stringStudy.h" />
+    <ClInclude Include="sudoku.h" />
     <ClInclude Include="TypeConversion.h" />
     <ClInclude Include="useOfArray.h" />
     <ClInclude Include="vectorStudy.h" />

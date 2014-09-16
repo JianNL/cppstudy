@@ -4,6 +4,17 @@
 using namespace std;
 
 
+
+
+void normalArithmetic()
+{
+	cout << "normalArithmetic" << endl;
+	int i = 4;
+	cout << ((i / 3.0) * 3) << endl;
+	cout << i / 3 * 3 << endl;
+}
+
+
 void wrappedaround()
 {
 	cout << "wrappedaround" << endl;

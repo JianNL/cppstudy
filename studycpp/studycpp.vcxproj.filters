@@ -45,6 +45,9 @@
     <ClInclude Include="Function.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="sudoku.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -52,6 +55,9 @@
     </ClCompile>
     <ClCompile Include="referenceTest.h">
       <Filter>Header Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sudoku.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
