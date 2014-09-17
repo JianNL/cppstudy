@@ -16,6 +16,7 @@
 //header shouldnot include using declaration
 using namespace std;
 
+//The assert macro is often used to check for conditions that ¡°cannot happen.¡±
 
 
 /*
