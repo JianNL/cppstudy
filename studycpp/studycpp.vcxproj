@@ -82,6 +82,7 @@
     <ClInclude Include="decltypeStudy.h" />
     <ClInclude Include="Function.h" />
     <ClInclude Include="lvalueAndrvalue.h" />
+    <ClInclude Include="memoryAlign.h" />
     <ClInclude Include="securityFun.h" />
     <ClInclude Include="stringStudy.h" />
     <ClInclude Include="sudoku.h" />

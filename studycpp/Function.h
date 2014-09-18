@@ -62,11 +62,12 @@ vector<string> useOfReturnValueofListInitializing()
 }
 
 
-
+/*
 int (*funOfReturnPointertoArray(int i))[10]
 {
 
 }
+*/
 
 
 //trailing return type
