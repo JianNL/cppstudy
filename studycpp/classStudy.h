@@ -90,13 +90,11 @@ Similarly for strings.
 in-class initializers must use either the = form of initialization
  or the direct form of initialization using curly braces .
 */
-
  
 /*
 It is important to understand that a friend declaration affects access but is not a
 declaration in an ordinary sense.
 */
-
 
 /*
 Members are initialized in the order in which they appear in the class defini-
@@ -116,7 +114,56 @@ A constructor that supplies default arguments for all its parameters also
 defines the default constructor.
 */
 
-
 /*
 delegate constructor
+*/
+
+/*
+Only One Class-Type Conversion Is Allowed
+*/
+
+/*
+We can prevent the use of a constructor in a context that requires an implicit con-
+version by declaring the constructor as explicit
+*/
+
+/*
+The explicit keyword is meaningful only on constructors that can be called
+with a single argument.
+*/
+
+/*
+Constructors that require more arguments are not used to
+perform an implicit conversion, so there is no need to designate such constructors
+as explicit. The explicit keyword is used only on the constructor declaration
+inside the class. It is not repeated on a definition made outside the class body
+*/
+
+/*
+explicit Constructors Can Be Used Only for Direct Initialization
+*/
+
+/*
+One context in which implicit conversions happen is when we use the copy form
+of initialization (with an =) . We cannot use an explicit constructor
+with this form of initialization; we must use direct initialization.
+*/
+
+/*
+When a constructor is declared explicit, it can be used only with the
+direct form of initialization. Moroever, the compiler will
+not use this constructor in an automatic conversion.
+
+*/
+
+/*
+The string constructor that takes a single parameter of type const char*
+ is not explicit.
+ The vector constructor that takes a size is explicit.
+*/
+
+/*
+Although constructors can¡¯t be const , constructors in a literal class
+can be constexpr functions. Indeed, a literal class must provide
+at least one constexpr constructor.
 */
