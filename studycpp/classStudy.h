@@ -167,3 +167,15 @@ Although constructors can¡¯t be const , constructors in a literal class
 can be constexpr functions. Indeed, a literal class must provide
 at least one constexpr constructor.
 */
+
+/*
+a static data member can have incomplete type .
+In particular, a static data member can have the same type as the class type of
+which it is a member. A nonstatic data member is restricted to being declared
+as a pointer or a reference to an object of its class:
+*/
+
+/*
+Another difference between static and ordinary members is that we can use a
+static member as a default argument
+*/

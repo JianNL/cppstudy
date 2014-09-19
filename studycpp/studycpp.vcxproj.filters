@@ -54,6 +54,9 @@
     <ClInclude Include="memoryAlign.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="IOclass.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

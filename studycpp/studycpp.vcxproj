@@ -81,6 +81,7 @@
     <ClInclude Include="ControlFlow.h" />
     <ClInclude Include="decltypeStudy.h" />
     <ClInclude Include="Function.h" />
+    <ClInclude Include="IOclass.h" />
     <ClInclude Include="lvalueAndrvalue.h" />
     <ClInclude Include="memoryAlign.h" />
     <ClInclude Include="securityFun.h" />
