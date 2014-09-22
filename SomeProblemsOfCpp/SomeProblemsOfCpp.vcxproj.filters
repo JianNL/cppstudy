@@ -15,8 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\Visual Studio 2013\Projects\ConsoleApplication1\ConsoleApplication1\main.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="defaultParameterInDerived.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lcs.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

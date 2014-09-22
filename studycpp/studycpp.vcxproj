@@ -51,10 +51,14 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -78,6 +82,7 @@
   <ItemGroup>
     <ClInclude Include="arithmeticOperate.h" />
     <ClInclude Include="classStudy.h" />
+    <ClInclude Include="ContainerOfSTL.h" />
     <ClInclude Include="ControlFlow.h" />
     <ClInclude Include="decltypeStudy.h" />
     <ClInclude Include="Function.h" />
