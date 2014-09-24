@@ -5,6 +5,7 @@
 
 using namespace std;
 
+//最长公共子串
 void lcsWorstMethod(const char *str1, const char *str2)
 {
 	cout << "lcsWorstMethod" << endl;
@@ -48,6 +49,7 @@ void lcsWorstMethod(const char *str1, const char *str2)
 }
 
 
+//最长公共子串
 void lcsDynamicProgMethod(const char *str1, const char *str2)
 {
 	if (str1==str2)
@@ -106,25 +108,6 @@ void lcsDynamicProgMethod(const char *str1, const char *str2)
 }
 
 
-string lcsRecursive(const char *str1, const char *str2, int i,int j)
-{
-	if (i>(strlen(str1)-1))
-	{
-		return "";
-	}
-	if (j>(strlen(str2)-1))
-	{
-		return "";
-	}
-	if (str1[i]==str2[j])
-	{
-		return str1[i] + lcsRecursive(str1, str2, i + 1, j + 1);
-	}
-	else
-	{
-		return "";
-	}
-}
 
 
 void lcsTest()

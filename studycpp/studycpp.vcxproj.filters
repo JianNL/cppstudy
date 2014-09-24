@@ -57,6 +57,12 @@
     <ClInclude Include="IOclass.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ContainerOfSTL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AlgorithmOfSTL.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

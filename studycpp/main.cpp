@@ -9,6 +9,7 @@
 #include "Function.h"
 #include "sudoku.h"
 #include "memoryAlign.h"
+#include "AlgorithmOfSTL.h"
 
 
 
@@ -197,7 +198,16 @@ int main()
 	/*
 	memoryAlign
 	*/
-	testMemoryPos();
+	//testMemoryPos();
+
+	/*
+	memoryAlign
+	*/
+
+	/*AlgorithmOfSTL*/
+	testOfInsertIterator();
+
+
 
 	auto f = [](){cout << "this is fun" << endl;  };//lambda
 	f();

@@ -80,6 +80,7 @@
     <ClCompile Include="sudoku.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AlgorithmOfSTL.h" />
     <ClInclude Include="arithmeticOperate.h" />
     <ClInclude Include="classStudy.h" />
     <ClInclude Include="ContainerOfSTL.h" />
