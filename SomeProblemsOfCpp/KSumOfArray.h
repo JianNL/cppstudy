@@ -82,5 +82,5 @@ void testKSumOfArray()
 	//cout << "-------------------------------------------" << endl;
 	//method 2
 	//KSumOfArray(20, 9);
-	KSumOfArray_C(15, 0);
+	//KSumOfArray_C(15, 0);
 }
