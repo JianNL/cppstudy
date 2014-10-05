@@ -72,6 +72,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="defaultParameterInDerived.h" />
+    <ClInclude Include="KSumOfArray.h" />
     <ClInclude Include="lcs.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
