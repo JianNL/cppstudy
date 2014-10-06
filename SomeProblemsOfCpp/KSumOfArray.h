@@ -76,11 +76,9 @@ void KSumOfArray_C(int sum, int n)
 
 void testKSumOfArray()
 {
-	//bool map[10] = { false };
-	//method 1
-	//KSumOfArray(map, 10, 0, 20, 0);
-	//cout << "-------------------------------------------" << endl;
-	//method 2
-	//KSumOfArray(20, 9);
-	//KSumOfArray_C(15, 0);
+	bool map[10] = { false };
+	KSumOfArray(map, 10, 0, 20, 0);
+	cout << "-------------------------------------------" << endl;
+	KSumOfArray(20, 9);
+	KSumOfArray_C(15, 0);
 }
