@@ -80,5 +80,5 @@ void testKSumOfArray()
 	KSumOfArray(map, 10, 0, 20, 0);
 	cout << "-------------------------------------------" << endl;
 	KSumOfArray(20, 9);
-	KSumOfArray_C(15, 0);
+	//KSumOfArray_C(15, 0);
 }
