@@ -9,7 +9,8 @@ int main(char *argv[],int argc)
 {
 	cout << "some problems in cpp" << endl;
 	//lcsTest();
-	testKSumOfArray();
+	//testKSumOfArray();
+	testMaxSub();
 	cout << "please input any key to exit the test!" << endl;
 	int i;
 	cin >> i;
