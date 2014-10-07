@@ -82,3 +82,35 @@ void testKSumOfArray()
 	KSumOfArray(20, 9);
 	//KSumOfArray_C(15, 0);
 }
+
+
+//最大子集合
+void MaxSubCol(const vector<int> &data)
+{
+	int current = 0;
+	int max = data[0];
+	for (int i = 0; i != data.size(); ++i)
+	{
+		current = current + data[i] > data[i] ? current + data[i] : data[i];
+		max = current > max ? current : max;
+	}
+	cout << "max is " << max << endl;
+
+}
+
+
+void testMaxSub()
+{
+	vector<int> vec = { 1, -2, 3, 10, -4, 7, 2, -5 };
+	MaxSubCol(vec);
+
+}
+
+
+
+
+
+
+
+
+
