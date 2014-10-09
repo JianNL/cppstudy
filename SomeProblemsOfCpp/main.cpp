@@ -2,6 +2,7 @@
 #include "lcs.h"
 #include "KSumOfArray.h"
 #include "MaxContainArray.h"
+#include "testOfSwap.h"
 #include <iostream>
 
 using namespace std;
@@ -12,7 +13,8 @@ int main(char *argv[],int argc)
 	//lcsTest();
 	//testKSumOfArray();
 	//testMaxSub();
-	testMaxContainArray();
+	//testMaxContainArray();
+	testOfSwap();
 	cout << "please input any key to exit the test!" << endl;
 	int i;
 	cin >> i;

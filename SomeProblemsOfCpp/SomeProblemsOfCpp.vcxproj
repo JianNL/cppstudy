@@ -75,6 +75,7 @@
     <ClInclude Include="KSumOfArray.h" />
     <ClInclude Include="lcs.h" />
     <ClInclude Include="MaxContainArray.h" />
+    <ClInclude Include="testOfSwap.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
