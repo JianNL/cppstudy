@@ -5,7 +5,8 @@
 
 using namespace std;
 
-
+#define UNUSE -2
+#define BATCH
 
 struct table
 {
@@ -63,6 +64,10 @@ map<char,vector<int> > getAllNext(const MMap &inMap,vector<int> positions)
 		count = 0;
 		for (int i = 0; i != 4;++i)
 		{
+			if (re_positions[i] == UNUSE)
+			{
+				continue;
+			}
 			for (auto e:iter->second.data[i])
 			{
 				if (e>re_positions[i])
@@ -71,6 +76,10 @@ map<char,vector<int> > getAllNext(const MMap &inMap,vector<int> positions)
 					count++;
 					break;
 				}
+			}
+			if (positions[i] == re_positions[i])
+			{
+				re_positions[i] = UNUSE;
 			}
 		}
 		if (count>=2)
@@ -83,20 +92,40 @@ map<char,vector<int> > getAllNext(const MMap &inMap,vector<int> positions)
 
 void getPattern(const MMap &inMap,string prefix, vector<int> positions)
 {
-
+	auto allNexts = getAllNext(inMap, positions);
+	if (allNexts.size() == 0)
+	{
+		return;
+	}
+	else
+	{
+		for (auto iter = allNexts.begin(); iter != allNexts.end(); ++iter)
+		{
+			cout << prefix + (iter->first) << endl;
+			getPattern(inMap, prefix + (iter->first), iter->second);
+		}
+	}
 }
 
 void Pattern(vector<string> input)
 {
-	MMap map = preProcessRawData(input);
+	MMap inMap = preProcessRawData(input);
+	getPattern(inMap, "", { -1, -1, -1, -1 });
 
 	
 }
 
+/*
+	abacc	a:0,2
+	bacac	  1,3
+	cabca	  1,4
+	bcaab	  2,3
+*/
 void testFPattern()
 {
 	vector<string> v = { "abacc", "bacac", "cabca", "bcaab" };
-	MMap inMap = preProcessRawData(v);
-	map<char, vector<int>> re = getAllNext(inMap, { 0, 0, 0, 0 });
+	//MMap inMap = preProcessRawData(v);
+	//map<char, vector<int>> re = getAllNext(inMap, { -1, -1, -1, -1 });
+	Pattern(v);
 }
 
