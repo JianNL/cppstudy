@@ -7,8 +7,14 @@ using namespace std;
 
 void VectorOfVector()
 {
-	vector<vector<int>> vecofvec;
+	vector<vector<int> > vecofvec;//注意有个空格。
 	
+}
+
+void initializeOfVector()
+{
+	vector<int> vec;
+	vector<int> vec1 = { 0 };
 }
 
 void normaluseOfVector()

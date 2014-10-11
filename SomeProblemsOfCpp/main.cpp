@@ -4,6 +4,7 @@
 #include "MaxContainArray.h"
 #include "testOfSwap.h"
 #include "quicksort.h"
+#include "fpattern.h"
 #include <iostream>
 
 using namespace std;
@@ -16,7 +17,8 @@ int main(char *argv[],int argc)
 	//testMaxSub();
 	//testMaxContainArray();
 	//testOfSwap();
-	testQuicksort();
+	//testQuicksort();
+	testFPattern();
 	cout << "please input any key to exit the test!" << endl;
 	int i;
 	cin >> i;

@@ -84,7 +84,7 @@ int main()
 	//NormalUseOfString();
 	//UseOfGetLine();
 	//newFor();
-	//useOfc_strString();
+	useOfc_strString();
 	/*
 	string test!
 	*/
@@ -96,6 +96,7 @@ int main()
 	*/
 	//normaluseOfVector();
 	//useOfremove_if();
+	initializeOfVector();
 
 	/*
 	vector test!
