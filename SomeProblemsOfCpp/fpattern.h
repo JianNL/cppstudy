@@ -6,7 +6,8 @@
 using namespace std;
 
 #define UNUSE -2
-#define BATCH
+#define INT_BATCH 4
+#define INT_SUPPORTRATE INT_BATCH/2
 
 struct table
 {
@@ -14,7 +15,7 @@ public:
 	table()
 	{
 		count = 0;
-		data = vector<vector<int> >(4);
+		data = vector<vector<int> >(INT_BATCH);
 	}
 	int count;
 	vector<vector<int> > data;
@@ -24,11 +25,19 @@ typedef map<char, table> MMap;
 const MMap preProcessRawData(const vector<string> &input)
 {
 	MMap result;
+	if (input.size()!=INT_BATCH)
+	{
+		return result;
+	}
 	set<char> lineSet;
 	int tid = 0;
 	int pos = 0;
 	for (auto &line:input)
 	{
+		if (line.length()==0)
+		{
+			cout << "occur a empty input line" << endl;
+		}
 		pos = 0;
 		for (auto &c:line)
 		{
@@ -45,7 +54,7 @@ const MMap preProcessRawData(const vector<string> &input)
 	}
 	for (auto iter = result.begin(); iter != result.end();++iter)
 	{
-		if (iter->second.count<2)
+		if (iter->second.count<INT_SUPPORTRATE)
 		{
 			result.erase(iter);
 		}
@@ -62,7 +71,7 @@ map<char,vector<int> > getAllNext(const MMap &inMap,vector<int> positions)
 	{
 		vector<int> re_positions(positions);
 		count = 0;
-		for (int i = 0; i != 4;++i)
+		for (int i = 0; i != INT_BATCH;++i)
 		{
 			if (re_positions[i] == UNUSE)
 			{
@@ -82,12 +91,18 @@ map<char,vector<int> > getAllNext(const MMap &inMap,vector<int> positions)
 				re_positions[i] = UNUSE;
 			}
 		}
-		if (count>=2)
+		if (count>=INT_SUPPORTRATE)
 		{
 			result[iter->first] = re_positions;
 		}
 	}
 	return result;
+}
+
+void processResult(string result)
+{
+	cout << result << endl;
+	//other sth
 }
 
 void getPattern(const MMap &inMap,string prefix, vector<int> positions)
@@ -101,7 +116,7 @@ void getPattern(const MMap &inMap,string prefix, vector<int> positions)
 	{
 		for (auto iter = allNexts.begin(); iter != allNexts.end(); ++iter)
 		{
-			cout << prefix + (iter->first) << endl;
+			processResult(prefix + (iter->first));
 			getPattern(inMap, prefix + (iter->first), iter->second);
 		}
 	}
