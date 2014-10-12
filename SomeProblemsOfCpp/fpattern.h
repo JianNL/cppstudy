@@ -27,6 +27,7 @@ const MMap preProcessRawData(const vector<string> &input)
 	MMap result;
 	if (input.size()!=INT_BATCH)
 	{
+		cout << "the input's " << endl;
 		return result;
 	}
 	set<char> lineSet;
@@ -52,11 +53,15 @@ const MMap preProcessRawData(const vector<string> &input)
 		lineSet.clear();
 		tid++;
 	}
-	for (auto iter = result.begin(); iter != result.end();++iter)
+	for (auto iter = result.begin(); iter != result.end();)
 	{
 		if (iter->second.count<INT_SUPPORTRATE)
 		{
-			result.erase(iter);
+			result.erase(iter++);
+		}
+		else
+		{
+			iter++;
 		}
 	}
 	return result;
@@ -77,7 +82,7 @@ map<char,vector<int> > getAllNext(const MMap &inMap,vector<int> positions)
 			{
 				continue;
 			}
-			for (auto e:iter->second.data[i])
+			for (auto e:iter->second.data[i])//
 			{
 				if (e>re_positions[i])
 				{
@@ -125,6 +130,10 @@ void getPattern(const MMap &inMap,string prefix, vector<int> positions)
 void Pattern(vector<string> input)
 {
 	MMap inMap = preProcessRawData(input);
+	if (inMap.size() == 0)
+	{
+		cout << "no result" << endl;
+	}
 	getPattern(inMap, "", { -1, -1, -1, -1 });
 
 	
@@ -138,9 +147,9 @@ void Pattern(vector<string> input)
 */
 void testFPattern()
 {
-	vector<string> v = { "abacc", "bacac", "cabca", "bcaab" };
+	vector<string> input = { "abacce", "bafcac", "cgabca", "hbcaab" };
 	//MMap inMap = preProcessRawData(v);
 	//map<char, vector<int>> re = getAllNext(inMap, { -1, -1, -1, -1 });
-	Pattern(v);
+	Pattern(input);
 }
 
