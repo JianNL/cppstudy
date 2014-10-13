@@ -29,5 +29,17 @@
     <ClInclude Include="KSumOfArray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MaxContainArray.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="testOfSwap.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="quicksort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="fpattern.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -250,6 +250,7 @@ void Pattern(vector<string> input,bool noOrderMode=false)
 void testFPattern()
 {
 	vector<string> input = { "abacce", "bafcac", "cgabca", "hbcaab" };
+	vector<string> inputC = { "asakdlfjoasidfoasd", "qoofuopaisdasdnfl", "oisdfpodfpoasidfo", "aopsosidaupoisda" };
 	vector<string> input1 = { "abac", "abcac", "babac", "abacc" };
 	vector<string> input2 = { "abc", "bac", "cab", "aab" };
 	vector<string> input3(input2);
@@ -267,7 +268,7 @@ void testFPattern()
 		currentCharInfo info;
 		info.currentChar = 'a' - 1;
 		map<char, currentCharInfo> re1 = getAllNextNoOrder(inMap, info);
-		Pattern(input, true);
+		Pattern(inputC, true);
 
 
 
