@@ -6,7 +6,7 @@
 using namespace std;
 
 #define UNUSE -2
-#define INT_BATCH 4
+#define INT_BATCH 8
 #define INT_SUPPORTRATE INT_BATCH/2
 
 struct table
@@ -134,7 +134,7 @@ void Pattern(vector<string> input)
 	{
 		cout << "no result" << endl;
 	}
-	getPattern(inMap, "", { -1, -1, -1, -1 });
+	getPattern(inMap, "", { -1, -1, -1, -1 ,-1,-1,-1,-1});
 
 	
 }
@@ -148,8 +148,14 @@ void Pattern(vector<string> input)
 void testFPattern()
 {
 	vector<string> input = { "abacce", "bafcac", "cgabca", "hbcaab" };
+	vector<string> input1 = { "abac", "abcac", "babac", "abacc" };
+	vector<string> input2 = { "abc", "bac", "cab", "aab" };
+	for (auto e : input1)
+	{
+		input2.push_back(e);
+	}
 	//MMap inMap = preProcessRawData(v);
 	//map<char, vector<int>> re = getAllNext(inMap, { -1, -1, -1, -1 });
-	Pattern(input);
+	Pattern(input2);
 }
 
