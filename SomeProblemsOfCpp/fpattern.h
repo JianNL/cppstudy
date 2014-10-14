@@ -113,7 +113,7 @@ public:
 	{
 		currentChar = 0;
 		usedNum = 0;
-		for (int i = 0; i != 4;++i)
+		for (int i = 0; i != INT_BATCH;++i)
 		{
 			masks.push_back(true);
 		}
@@ -268,7 +268,9 @@ void testFPattern()
 		currentCharInfo info;
 		info.currentChar = 'a' - 1;
 		map<char, currentCharInfo> re1 = getAllNextNoOrder(inMap, info);
-		Pattern(inputC, true);
+		cout << "start" << endl;
+		Pattern(input3, true);
+		cout << "finish" << endl;
 
 
 
