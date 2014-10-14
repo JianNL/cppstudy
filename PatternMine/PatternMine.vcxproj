@@ -64,6 +64,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="datasource.h" />
     <ClInclude Include="pattern.h" />
   </ItemGroup>
   <ItemGroup>

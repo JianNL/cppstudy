@@ -1,7 +1,10 @@
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <map>
 #include <set>
+#include <queue>
+#include <string>
 
 using namespace std;
 
@@ -35,23 +38,40 @@ public:
 		int usedNum;
 		vector<bool> masks;
 	};
+	
+	BatchPatternMiner() :IsOutputToScreen(true)
+	{
+	}
 
-	void minePattern(bool noOrderMode=false);
-	void getInput(const vector<string> &input);
-	void getInput(const string &file);
+	void minePatternOnce(bool noOrderMode=false);
+	void minePatternLasting(bool noOrderMode = false);
+	void inputRawData(const vector<string> &input);
+	void inputRawData(const string &file);
+	void setIsOutputToScreen(bool b)
+	{
+		this->IsOutputToScreen = b;
+	}
+	void reset();
 
 	
 private:
 	
-
+	bool IsOutputToScreen;
 	vector<string> _batchInput;
+
+	queue<vector<string> > _bufferInput;
+	
 	MMap _inMap;
 
-	void getPattern(const MMap &inMap,string prefix, vector<int> positions);
-	void getPatterNoOrder(const MMap &inMap, string prefix, currentCharInfo info);
+	void getPattern(string prefix, vector<int> positions);
+	void getPatterNoOrder(string prefix, currentCharInfo info);
 
-	void processResult(string result);
-	MMap preProcessRawData(const vector<string> &input);
-	map<char, vector<int> > getAllNext(const MMap &inMap, vector<int> positions);
-	map<char, currentCharInfo> getAllNextNoOrder(const MMap &inMap, currentCharInfo info);
+	void processResult(const string &result);
+	void preProcessRawData();
+
+	map<char, vector<int> > getAllNext(vector<int> positions);
+	map<char, currentCharInfo> getAllNextNoOrder(currentCharInfo info);
+
+	bool getInputFromDatasource();
+
 };
