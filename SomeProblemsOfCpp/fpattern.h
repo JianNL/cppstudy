@@ -12,10 +12,8 @@ using namespace std;
 struct table
 {
 public:
-	table()
+	table() :count(0), data(vector<vector<int> >(INT_BATCH))
 	{
-		count = 0;
-		data = vector<vector<int> >(INT_BATCH);
 	}
 	int count;
 	vector<vector<int> > data;
@@ -109,14 +107,8 @@ map<char,vector<int> > getAllNext(const MMap &inMap,vector<int> positions)
 struct currentCharInfo
 {
 public:
-	currentCharInfo()
+	currentCharInfo() :currentChar(0), usedNum(0), masks(vector<bool>(INT_BATCH,true))
 	{
-		currentChar = 0;
-		usedNum = 0;
-		for (int i = 0; i != INT_BATCH;++i)
-		{
-			masks.push_back(true);
-		}
 	}
 	char currentChar;
 	int usedNum;
