@@ -78,6 +78,7 @@
     <ClInclude Include="MaxContainArray.h" />
     <ClInclude Include="quicksort.h" />
     <ClInclude Include="testOfSwap.h" />
+    <ClInclude Include="threadtest.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
