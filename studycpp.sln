@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "studycpp", "studycpp\studyc
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SomeProblemsOfCpp", "SomeProblemsOfCpp\SomeProblemsOfCpp.vcxproj", "{C898873C-ADFD-4D66-87BB-5B1F1205FE17}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PatternMine", "PatternMine\PatternMine.vcxproj", "{139268DE-8323-413E-89CF-45A886D43611}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -26,6 +28,12 @@ Global
 		{C898873C-ADFD-4D66-87BB-5B1F1205FE17}.ff|Win32.Build.0 = Release|Win32
 		{C898873C-ADFD-4D66-87BB-5B1F1205FE17}.Release|Win32.ActiveCfg = Release|Win32
 		{C898873C-ADFD-4D66-87BB-5B1F1205FE17}.Release|Win32.Build.0 = Release|Win32
+		{139268DE-8323-413E-89CF-45A886D43611}.Debug|Win32.ActiveCfg = Debug|Win32
+		{139268DE-8323-413E-89CF-45A886D43611}.Debug|Win32.Build.0 = Debug|Win32
+		{139268DE-8323-413E-89CF-45A886D43611}.ff|Win32.ActiveCfg = Release|Win32
+		{139268DE-8323-413E-89CF-45A886D43611}.ff|Win32.Build.0 = Release|Win32
+		{139268DE-8323-413E-89CF-45A886D43611}.Release|Win32.ActiveCfg = Release|Win32
+		{139268DE-8323-413E-89CF-45A886D43611}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

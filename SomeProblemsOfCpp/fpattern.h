@@ -22,7 +22,7 @@ typedef map<char, table> MMap;
 
 
 
-const MMap preProcessRawData(const vector<string> &input)
+MMap preProcessRawData(const vector<string> &input)
 {
 	MMap result;
 	if (input.size()!=INT_BATCH)
