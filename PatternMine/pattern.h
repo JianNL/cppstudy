@@ -5,12 +5,10 @@
 #include <set>
 #include <queue>
 #include <string>
+#include "common.h"
 
 using namespace std;
 
-#define UNUSE -2
-#define INT_BATCH 4
-#define INT_SUPPORTRATE INT_BATCH/2
 
 
 

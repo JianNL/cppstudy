@@ -1,4 +1,6 @@
 #include "pattern.h"
+#include "buffer.h"
+#include <chrono>
 #include <time.h>
 
 
@@ -14,14 +16,40 @@ int main(char *argv[], int argc)
 	{
 		input2.push_back(e);
 	}
-	BatchPatternMiner miner;
-	miner.setIsOutputToScreen(false);
-	clock_t start, finish;
-	start = clock();
-	miner.inputRawData("data.txt");
-	miner.minePatternLasting();
-	finish = clock();
-	cout << "the duration is " << (double)(finish - start)/CLOCKS_PER_SEC <<" sec"<< endl;
+	{
+		//miner test
+		/*
+		BatchPatternMiner miner;
+		miner.setIsOutputToScreen(false);
+		clock_t start, finish;
+		start = clock();
+		miner.inputRawData("data.txt");
+		miner.minePatternLasting();
+		finish = clock();
+		cout << "the duration is " << (double)(finish - start)/CLOCKS_PER_SEC <<" sec"<< endl;
+		*/
+	}
+	{
+		//buffer test
+		buffer b;
+		thread t1([&b](){
+			int i = 100;
+			while (i-- > 0)
+			{
+				b.push({ "0" });
+			}
+		});
+		thread t2([&b](){
+			int i = 100;
+			this_thread::sleep_for(chrono::seconds(20));
+			while (i-->0)
+			{
+				b.push({ "1" });
+			}
+		});
+		t1.join();
+		t2.join();
+	}
 	int i;
 	cout << "input any key to exit" << endl;
 	cin >> i;

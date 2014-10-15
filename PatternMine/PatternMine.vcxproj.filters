@@ -21,12 +21,21 @@
     <ClInclude Include="datasource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="buffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pattern.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="buffer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
