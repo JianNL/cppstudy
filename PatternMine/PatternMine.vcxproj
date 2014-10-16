@@ -64,12 +64,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="buffer.h" />
+    <ClInclude Include="common.h" />
     <ClInclude Include="datasource.h" />
-    <ClInclude Include="pattern.h" />
+    <ClInclude Include="BatchPatternMiner.h" />
+    <ClInclude Include="Miner.h" />
+    <ClInclude Include="MinerMachine.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="buffer.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="pattern.cpp" />
+    <ClCompile Include="BatchPatternMiner.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

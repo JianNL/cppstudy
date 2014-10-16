@@ -1,4 +1,4 @@
-#include "pattern.h"
+#include "BatchPatternMiner.h"
 
 void BatchPatternMiner::preProcessRawData()
 {
@@ -214,7 +214,8 @@ void BatchPatternMiner::minePatternLasting(bool noOrderMode)
 	int count = 0;
 	while (!_bufferInput.empty())
 	{
-		this->_batchInput = this->_bufferInput.front();
+		this->_batchInput = std::move(this->_bufferInput.front());
+		//this->_batchInput = this->_bufferInput.front();
 		cout << "mining " << ++count << " batch number" << endl;
 		this->minePatternOnce();
 		this->_bufferInput.pop();

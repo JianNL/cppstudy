@@ -44,11 +44,14 @@
     <ClInclude Include="threadtest.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="kmp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="lis.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+=======
+>>>>>>> dev_buffer
   </ItemGroup>
 </Project>

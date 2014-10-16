@@ -5,16 +5,15 @@
 #include <set>
 #include <queue>
 #include <string>
+#include "common.h"
+#include "Miner.h"
 
 using namespace std;
 
-#define UNUSE -2
-#define INT_BATCH 4
-#define INT_SUPPORTRATE INT_BATCH/2
 
 
 
-class BatchPatternMiner
+class BatchPatternMiner:public Miner
 {
 public:
 	struct table
@@ -39,7 +38,7 @@ public:
 		vector<bool> masks;
 	};
 	
-	BatchPatternMiner() :IsOutputToScreen(true)
+	BatchPatternMiner() :Miner(),IsOutputToScreen(true)
 	{
 	}
 
