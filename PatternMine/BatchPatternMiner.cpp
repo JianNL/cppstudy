@@ -1,4 +1,4 @@
-#include "pattern.h"
+#include "BatchPatternMiner.h"
 
 void BatchPatternMiner::preProcessRawData()
 {
