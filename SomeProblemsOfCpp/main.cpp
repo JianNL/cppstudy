@@ -6,6 +6,7 @@
 #include "quicksort.h"
 #include "fpattern.h"
 #include "threadtest.h"
+#include "lis.h"
 #include <iostream>
 
 using namespace std;
@@ -20,7 +21,8 @@ int main(char *argv[],int argc)
 	//testOfSwap();
 	//testQuicksort();
 	//testFPattern();
-	testOfThread();
+	//testOfThread();
+	testOfLis();
 	cout << "please input any key to exit the test!" << endl;
 	int i;
 	cin >> i;

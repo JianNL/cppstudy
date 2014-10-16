@@ -41,5 +41,14 @@
     <ClInclude Include="fpattern.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="threadtest.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kmp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lis.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

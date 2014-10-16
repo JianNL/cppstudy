@@ -73,9 +73,11 @@
   <ItemGroup>
     <ClInclude Include="defaultParameterInDerived.h" />
     <ClInclude Include="fpattern.h" />
+    <ClInclude Include="kmp.h" />
     <ClInclude Include="KSumOfArray.h" />
     <ClInclude Include="lcs.h" />
     <ClInclude Include="MaxContainArray.h" />
+    <ClInclude Include="lis.h" />
     <ClInclude Include="quicksort.h" />
     <ClInclude Include="testOfSwap.h" />
     <ClInclude Include="threadtest.h" />
