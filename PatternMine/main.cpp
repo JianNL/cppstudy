@@ -71,7 +71,6 @@ int main(char *argv[], int argc)
 		machine.registWithMiner(&batchMiner2);
 		machine.bindDataSource(&fd);
 		machine.startWork();
-		machine.waitToFinish();
 
 	}
 	/*

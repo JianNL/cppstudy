@@ -21,15 +21,11 @@ public:
 	void registWithMiner(Miner *miner);
 	void bindDataSource(DataSource *ds);
 	void startWork();
-	void waitToFinish();
 private:
 	string name;
-	void connectDataSource();
 	buffer _buffer;
 	DataSource * _dataSources;
 	vector<Miner *> _miners;
-	vector<thread *> _minerThreads;
-	vector<thread *> _dataThreads;
 
 };
 

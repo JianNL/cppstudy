@@ -19,46 +19,7 @@ void MinerMachine::startWork()
 		cout << "no datasource" << endl;
 		exit(0);
 	}
-	connectDataSource();
-	for (auto iter = _miners.begin(); iter != _miners.end();++iter)
-	{
-
-		thread t([&](){
-			cout << (*iter)->getMinerName() << " working" << endl;
-			while (1)
-			{
-				vector<string> batchInput = _buffer.pop();
-				if (batchInput.size()!=INT_BATCH)
-				{
-					break;
-				}
-				(*iter)->inputRawData(batchInput);
-				(*iter)->minePatternOnce();
-			}
-			cout << (*iter)->getMinerName() << " finish" << endl;
-		});
-		_minerThreads.push_back(&t);
-	}
-		
-
-
-}
-
-
-void MinerMachine::bindDataSource(DataSource *ds)
-{
-	_dataSources=ds;
-}
-
-
-void MinerMachine::connectDataSource()
-{
-	if (_dataSources==nullptr)
-	{
-		cout << "no datasourc" << endl;
-		exit(0);
-	}
-	thread t([&](){
+	thread t_data([&](){
 		while (1)
 		{
 			vector<string> temp = _dataSources->getBatchInput();
@@ -72,19 +33,44 @@ void MinerMachine::connectDataSource()
 			}
 		}
 	});
-	this->_dataThreads.push_back(&t);
+	vector<thread> minerThreads(_miners.size());
+	int i = 0;
+	for (auto iter = _miners.begin(); iter != _miners.end();++iter)
+	{
+		thread t([iter,this](){
+			cout << (*iter)->getMinerName() << " working" << endl;
+			while (1)
+			{
+				vector<string> batchInput = _buffer.pop();
+				if (batchInput.size()!=INT_BATCH)
+				{
+					break;
+				}
+				(*iter)->inputRawData(batchInput);
+				(*iter)->minePatternOnce();
+			}
+			cout << (*iter)->getMinerName() << " finish" << endl;
+		});
+		minerThreads[i] = move(t);
+		i++;
+		
+	}
+
+	t_data.join();
+	for (auto &t:minerThreads)
+	{
+		t.join();
+	}
+
 }
 
 
-
-void MinerMachine::waitToFinish()
+void MinerMachine::bindDataSource(DataSource *ds)
 {
-	for (auto t:_dataThreads)
-	{
-		t->join();
-	}
-	for (auto t:_minerThreads)
-	{
-		t->join();
-	}
+	_dataSources=ds;
 }
+
+
+
+
+
