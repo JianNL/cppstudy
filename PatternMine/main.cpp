@@ -1,5 +1,6 @@
 #include "BatchPatternMiner.h"
 #include "buffer.h"
+#include "MinerMachine.h"
 #include <chrono>
 #include <time.h>
 
@@ -16,6 +17,7 @@ int main(char *argv[], int argc)
 	{
 		input2.push_back(e);
 	}
+	/*
 	{
 		//miner test
 		BatchPatternMiner miner;
@@ -27,6 +29,7 @@ int main(char *argv[], int argc)
 		finish = clock();
 		cout << "the duration is " << (double)(finish - start)/CLOCKS_PER_SEC <<" sec"<< endl;
 	}
+	*/
 	{
 		//buffer test
 		/*
@@ -50,6 +53,49 @@ int main(char *argv[], int argc)
 		t2.join();
 		*/
 	}
+
+	{
+		//MinerMachine test
+		MinerMachine machine("m1");
+		FileDataSource fd("data.txt");
+		if (!fd.init())
+		{
+			cout << "datasource init error" << endl;
+			exit(0);
+		}
+		BatchPatternMiner batchMiner1("miner1");
+		batchMiner1.setIsOutputToScreen(false);
+		BatchPatternMiner batchMiner2("miner2");
+		batchMiner2.setIsOutputToScreen(false);
+		machine.registWithMiner(&batchMiner1);
+		machine.registWithMiner(&batchMiner2);
+		machine.bindDataSource(&fd);
+		machine.startWork();
+		machine.waitToFinish();
+
+	}
+	/*
+	{
+		//FileDataSource test
+		cout << "FileDataSource test" << endl;
+		FileDataSource fd("data.txt");
+		fd.init();
+		while (1)
+		{
+			auto e = fd.getBatchInput();
+			if (e.size()!=INT_BATCH)
+			{
+				break;
+			}
+			for (auto i:e)
+			{
+				cout << i << endl;
+			}
+			cout << "-------------------------" << endl;
+		}
+		fd.free();
+	}
+	*/
 	int i;
 	cout << "input any key to exit" << endl;
 	cin >> i;

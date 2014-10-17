@@ -206,6 +206,7 @@ void BatchPatternMiner::minePatternOnce(bool noOrderMode)
 	{
 		getPattern( "", vector<int>(INT_BATCH,-1));
 	}
+	this->reset();
 }
 
 

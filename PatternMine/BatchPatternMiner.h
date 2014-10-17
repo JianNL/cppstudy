@@ -1,3 +1,5 @@
+#ifndef BATCHPATTERNMINER_H
+#define BATCHPATTERNMINER_H
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -38,24 +40,20 @@ public:
 		vector<bool> masks;
 	};
 	
-	BatchPatternMiner() :Miner(),IsOutputToScreen(true)
+	BatchPatternMiner() :Miner()
 	{
 	}
+	BatchPatternMiner(const string &name) :Miner(name)
+	{}
 
 	void minePatternOnce(bool noOrderMode=false);
 	void minePatternLasting(bool noOrderMode = false);
 	void inputRawData(const vector<string> &input);
 	void inputRawData(const string &file);
-	void setIsOutputToScreen(bool b)
-	{
-		this->IsOutputToScreen = b;
-	}
-	void reset();
 
 	
 private:
 	
-	bool IsOutputToScreen;
 	vector<string> _batchInput;
 
 	queue<vector<string> > _bufferInput;
@@ -70,7 +68,9 @@ private:
 
 	map<char, vector<int> > getAllNext(vector<int> positions);
 	map<char, currentCharInfo> getAllNextNoOrder(currentCharInfo info);
-
+	void BatchPatternMiner::reset();
 	bool getInputFromDatasource();
 
 };
+
+#endif

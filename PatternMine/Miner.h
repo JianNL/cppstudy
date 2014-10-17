@@ -10,6 +10,10 @@ using namespace std;
 class Miner
 {
 public:
+	Miner() :_minerName("default"), IsOutputToScreen(true)
+	{}
+	Miner(const string &name) :_minerName(name), IsOutputToScreen(true)
+	{}
 	virtual void minePatternOnce(bool noOrderMode = false)
 	{
 	}
@@ -19,11 +23,18 @@ public:
 	{}
 	virtual void inputRawData(const string &file)
 	{}
-	virtual void setIsOutputToScreen(bool b)
-	{}
+	const string &getMinerName()
+	{
+		return this->_minerName;
+	}
+	void setIsOutputToScreen(bool b)
+	{
+		this->IsOutputToScreen = b;
+	}
+	bool IsOutputToScreen;
 private:
+	string _minerName;
 		
-
 };
 
 

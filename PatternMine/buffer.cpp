@@ -15,7 +15,12 @@ vector<string> buffer::pop()
 	unique_lock<mutex> lock(_mutex);
 	if (_data.empty())
 	{
-		_condition.wait(lock);
+		auto re=_condition.wait_for(lock,chrono::seconds(3));
+		if (re==cv_status::timeout)
+		{
+			return vector<string>();
+		}
+
 	}
 	vector<string> result = move(_data.front());
 	cout << this_thread::get_id() << " thread pop data" << endl;

@@ -8,13 +8,24 @@ void hello()
 {
 	cout << "thread from hello" << endl;
 	cout << "tid is " << this_thread::get_id() << endl;
-	int i;
-	cin >> i;
+	int i=20000;
+	while (i>10000)
+	{
+		cout << i << endl;
+		i--;
+	}
+
 }
 
 void testOfThread()
 {
 	thread t1(hello);
-	t1.detach();
+	thread t2([](){
+		int i = 10000;
+		while (i--)
+		{
+			cout << i << endl;
+		}
+	});
 	cout << "main thread" << endl;
 }
