@@ -24,7 +24,7 @@ int main(char *argv[],int argc)
 	//testFPattern();
 	//testOfThread();
 	//testOfLis();
-	testEnv();
+	//testEnv();
 	cout << "please input any key to exit the test!" << endl;
 	int i;
 	cin >> i;

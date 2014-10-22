@@ -1,5 +1,6 @@
 #include "BatchPatternMiner.h"
 #include "buffer.h"
+#include "treeofunorder.h"
 #include <chrono>
 #include <time.h>
 
@@ -19,13 +20,46 @@ int main(char *argv[], int argc)
 	{
 		//miner test
 		BatchPatternMiner miner;
-		miner.setIsOutputToScreen(false);
+		miner.setIsOutputToScreen(true);
 		clock_t start, finish;
 		start = clock();
-		miner.inputRawData("data.txt");
-		miner.minePatternLasting();
+		miner.inputRawData(input1);
+		miner.minePatternOnce(true);
+		miner.reset();
+		miner.inputRawData(input1);
+		miner.minePatternOnce();
+		miner.reset();
+		/*
+		miner.inputRawData(input1);
+		miner.minePatternOnce(true);
+		*/
 		finish = clock();
 		cout << "the duration is " << (double)(finish - start)/CLOCKS_PER_SEC <<" sec"<< endl;
+		cout << "traverse the tree" << endl;
+		miner.traverse([](const string &str){
+			cout << str << endl;
+		});
+	}
+	{
+		//tree of no order test
+		/*
+		treeunorder tree;
+		clock_t start, finish;
+		start = clock();
+		tree.search("abc", true);
+		finish = clock();
+		cout << "the duration is " << (double)(finish - start)/CLOCKS_PER_SEC <<" sec"<< endl;
+		tree.search("abccc", true);
+		tree.search("abc");
+		tree.search("aaaaccc", true);
+		tree.search("aaaaccc", true);
+		tree.search("abc", true);
+		tree.search("abccc", true);
+		tree.search("abc");
+		tree.search("aaaaccc", true);
+		tree.search("aaaaccc", true);
+		*/
+
 	}
 	{
 		//buffer test

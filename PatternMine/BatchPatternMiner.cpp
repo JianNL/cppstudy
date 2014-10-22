@@ -142,12 +142,14 @@ map<char, BatchPatternMiner::currentCharInfo> BatchPatternMiner::getAllNextNoOrd
 }
 
 
-void BatchPatternMiner::processResult(const string& result)
+void BatchPatternMiner::processResult(treeunorder &tree,const string& result)
 {
 	if (IsOutputToScreen)
 	{
 		cout << result << endl;
 	}
+	tree.search(result, true);
+	tree.search(result, true, true);
 }
 
 
@@ -163,7 +165,7 @@ void BatchPatternMiner::getPattern(string prefix, vector<int> positions)
 	{
 		for (auto iter = allNexts.begin(); iter != allNexts.end(); ++iter)
 		{
-			processResult(prefix + (iter->first));
+			processResult(tree,prefix + (iter->first));
 			getPattern(prefix + (iter->first), iter->second);
 		}
 	}
@@ -182,7 +184,7 @@ void BatchPatternMiner::getPatterNoOrder(string prefix, currentCharInfo info)
 	{
 		for (auto iter = allNexts.begin(); iter != allNexts.end();++iter)
 		{
-			processResult(prefix + (iter->first));
+			processResult(tree,prefix + (iter->first));
 			getPatterNoOrder(prefix + (iter->first), iter->second);
 		}
 	}
@@ -271,4 +273,10 @@ void BatchPatternMiner::reset()
 {
 	this->_batchInput.clear();
 	this->_inMap.clear();
+}
+
+
+void BatchPatternMiner::traverse(function<void(const string &)> func)
+{
+	this->tree.traverse(func);
 }
