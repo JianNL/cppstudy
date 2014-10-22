@@ -79,6 +79,7 @@
     <ClInclude Include="MaxContainArray.h" />
     <ClInclude Include="lis.h" />
     <ClInclude Include="quicksort.h" />
+    <ClInclude Include="testEnv.h" />
     <ClInclude Include="testOfSwap.h" />
     <ClInclude Include="threadtest.h" />
   </ItemGroup>
