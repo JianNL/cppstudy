@@ -70,11 +70,20 @@
     <ClInclude Include="BatchPatternMiner.h" />
     <ClInclude Include="Miner.h" />
     <ClInclude Include="MinerMachine.h" />
+    <ClInclude Include="radarxmlpars.h" />
+    <ClInclude Include="relationtable.h" />
+    <ClInclude Include="tinyxml2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="buffer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="BatchPatternMiner.cpp" />
+    <ClCompile Include="radarxmlpars.cpp" />
+    <ClCompile Include="relationtable.cpp" />
+    <ClCompile Include="tinyxml2.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="test.xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,6 @@
 #include "BatchPatternMiner.h"
 #include "buffer.h"
+#include "radarxmlpars.h"
 #include <chrono>
 #include <time.h>
 
@@ -18,6 +19,7 @@ int main(char *argv[], int argc)
 	}
 	{
 		//miner test
+		/*
 		BatchPatternMiner miner;
 		miner.setIsOutputToScreen(false);
 		clock_t start, finish;
@@ -26,6 +28,7 @@ int main(char *argv[], int argc)
 		miner.minePatternLasting();
 		finish = clock();
 		cout << "the duration is " << (double)(finish - start)/CLOCKS_PER_SEC <<" sec"<< endl;
+		*/
 	}
 	{
 		//buffer test
@@ -49,6 +52,12 @@ int main(char *argv[], int argc)
 		t1.join();
 		t2.join();
 		*/
+	}
+	{
+		//xmltest
+		RadarXmlParser *paser = new RadarXmlParser("test.xml");
+		cout << paser->getRadarNumbers() << endl;
+		delete paser;
 	}
 	int i;
 	cout << "input any key to exit" << endl;

@@ -1,0 +1,16 @@
+<radars>
+  <radar>
+    <id>1</id>
+    <name>r1</name>
+    <action>act1</action>
+    <posx>111</posx>
+    <posy>222</posy>
+  </radar>
+  <radar>
+    <id>2</id>
+    <name>r2</name>
+    <action>act2</action>
+    <posx>112</posx>
+    <posy>223</posy>
+  </radar>
+</radars>
