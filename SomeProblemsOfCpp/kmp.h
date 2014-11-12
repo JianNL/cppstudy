@@ -1,22 +1,67 @@
 #include <iostream>
+#include <string>
 
 
 using namespace std;
 
 
-void getNextArrays(const char *str, int *t, int len)
+void getNexts(const string &p, int *next, int len)
 {
-	if (len==0)
+	if (len == 0)
 	{
 		return;
 	}
-	t[0] = -1;
-	for (int i = 0; i != len;++i)
+	next[0] = -1;
+	int i = 0;
+	int k = -1;
+	for (; i != len;++i)
 	{
-		if (t[i-1]==-1)
+		if (k==-1||p[i]==p[k])
 		{
-			t[i] = 0;
+			k++;
+			i++;
+			next[i] = k;
 		}
-
+		else
+		{
+			k = next[k];
+		}
 	}
+}
+
+int kmpsearch(const string &str, const string &pattern, int *nexts)
+{
+	int lenStr = str.length();
+	int lenPattern = pattern.length();
+	int j = 0;
+	int i = 0;
+	while (i<lenStr&&j<lenPattern)
+	{
+		if (j==-1||str[i]==pattern[j])
+		{
+			i++;
+			j++;
+		}
+		else
+		{
+			j = nexts[j];
+		}
+	}
+	if (j>=lenPattern)
+	{
+		return i - lenPattern;
+	}
+
+}
+
+void testKMP()
+{
+	string str = "abcdeabacabdaefa";
+	string pattern = "abac";
+	int nexts[4] = { 0 };
+	getNexts(pattern, nexts, 4);
+	int re=kmpsearch(str, pattern, nexts);
+	cout << " str is " << str << endl;
+	cout << " pattern is " << pattern << endl;
+	cout << " the result is " << re << endl;
 }

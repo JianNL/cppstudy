@@ -5,7 +5,7 @@ using namespace std;
 
 void useOfswitch()
 {
-	int i;
+	int i = 2;
 	cout << "useOfswitch" << endl;
 	cout << "please input the i" << endl;
 	switch (i)
@@ -26,7 +26,7 @@ void useOfswitch()
 		}
 
 		break;
-	case (3,4,5):
+	case 2:
 		cout << "test!" << endl;
 		break;
 	default:
@@ -34,4 +34,22 @@ void useOfswitch()
 		cout << j << endl;
 		break;
 	}
+}
+
+void useOfElseif()
+{
+	cout << "test useOfElseif" << endl;
+	if (true)
+	{
+		cout << "if" << endl;
+	}
+	else if (true)
+	{
+		cout << "else if" << endl;
+	}
+	else
+	{
+		cout << "else" << endl;
+	}
+
 }

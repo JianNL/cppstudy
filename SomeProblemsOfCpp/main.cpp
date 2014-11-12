@@ -8,6 +8,7 @@
 #include "threadtest.h"
 #include "lis.h"
 #include "testEnv.h"
+#include "kmp.h"
 #include <iostream>
 
 using namespace std;
@@ -24,7 +25,8 @@ int main(char *argv[],int argc)
 	//testFPattern();
 	//testOfThread();
 	//testOfLis();
-	testEnv();
+	//testEnv();
+	testKMP();
 	cout << "please input any key to exit the test!" << endl;
 	int i;
 	cin >> i;

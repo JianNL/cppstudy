@@ -10,7 +10,7 @@
 #include "sudoku.h"
 #include "memoryAlign.h"
 #include "AlgorithmOfSTL.h"
-
+#include "ControlFlow.h"
 
 
 
@@ -73,7 +73,7 @@ int main()
 	//constexpr int *q = nullptr; // q is a const pointer to int
 
 	//int null = 0, *p_null = null;
-	cout << "testReference!" << endl;
+	//cout << "testReference!" << endl;
 
 
 
@@ -84,7 +84,7 @@ int main()
 	//NormalUseOfString();
 	//UseOfGetLine();
 	//newFor();
-	useOfc_strString();
+	//useOfc_strString();
 	/*
 	string test!
 	*/
@@ -96,7 +96,7 @@ int main()
 	*/
 	//normaluseOfVector();
 	//useOfremove_if();
-	initializeOfVector();
+	//initializeOfVector();
 
 	/*
 	vector test!
@@ -206,7 +206,8 @@ int main()
 	*/
 
 	/*AlgorithmOfSTL*/
-	testOfInsertIterator();
+	//testOfInsertIterator();
+	useOfElseif();
 
 
 
