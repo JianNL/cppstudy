@@ -7,6 +7,7 @@
 #include <string>
 #include <functional>
 #include <algorithm>
+#include <memory>
 #include <assert.h>
 
 using namespace std;
@@ -25,18 +26,9 @@ public:
 	{}
 	virtual ~node()
 	{
-		if (children.size()>0)
-		{
-			for (auto iter = children.begin(); iter != children.end();++iter)
-			{
-				if ((*iter).second!=nullptr)
-				{
-					delete (*iter).second;
-				}
-			}
-		}
+	
 	}
-	virtual map<char,node *>& getChildren()
+	virtual map<char,shared_ptr<node> >& getChildren()
 	{
 		return children;
 	}
@@ -61,7 +53,7 @@ public:
 	}
 private:
 	char data;
-	map<char, node *> children;
+	map<char, shared_ptr<node> > children;
 };
 
 class normalnode:public node
@@ -117,25 +109,20 @@ private:
 class tree
 {
 public:
-	tree()
+	tree() :root(new normalnode('*'))
 	{
-		root = new normalnode('*');
 	}
 	~tree()
 	{
-		if (root)
-		{
-			delete root;
-		}
 	}
 	void search(const string &str,bool isUpdate=false);
 	void fuzzyMatch(const string &str, int threshold);
 	void traverse(function<void(const string &)> func);
 private:
-	node *root;
+	shared_ptr<node> root;
 	vector<string> _tempMatches;
-	void _traverse(node *pnode, const string &str,function<void(const string &)> func);
-	void _fuzzyMatch(node *pnode, const string &prefix, const string &postfix, int threshold);
+	void _traverse(shared_ptr<node> pnode, const string &str,function<void(const string &)> func);
+	void _fuzzyMatch(shared_ptr<node> pnode, const string &prefix, const string &postfix, int threshold);
 
 };
 
