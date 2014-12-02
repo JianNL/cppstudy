@@ -38,7 +38,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Users\Administrator\Desktop\cereal-master\include;$(INCLUDE);$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -70,6 +72,7 @@
     <ClInclude Include="BatchPatternMiner.h" />
     <ClInclude Include="Miner.h" />
     <ClInclude Include="MinerMachine.h" />
+    <ClInclude Include="testCereal.h" />
     <ClInclude Include="tree.h" />
   </ItemGroup>
   <ItemGroup>

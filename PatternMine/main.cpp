@@ -3,6 +3,7 @@
 #include "tree.h"
 #include <chrono>
 #include <time.h>
+#include "testCereal.h"
 
 
 int main(char *argv[], int argc)
@@ -63,6 +64,11 @@ int main(char *argv[], int argc)
 		tree1.fuzzyMatch("abc", 1);
 		finish = clock();
 		cout << "the duration is " << (double)(finish - start)/CLOCKS_PER_SEC <<" sec"<< endl;
+
+	}
+	{
+		//testCereal
+		test();
 
 	}
 	{
