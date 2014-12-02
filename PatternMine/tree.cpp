@@ -2,6 +2,10 @@
 
 void tree::search(const string &str, bool isUpdate/* =false */)
 {
+	if (str.length()==0)
+	{
+		return;
+	}
 	shared_ptr<node> current = root;
 	for (int i = 0; i != str.length();++i)
 	{
@@ -13,7 +17,7 @@ void tree::search(const string &str, bool isUpdate/* =false */)
 			{
 				if (current->getChildren().count('#'))
 				{
-					cout << "find " << str << " count " << current->getChildren()['#']->incCount() << endl;
+					cout << "find " << str << endl;
 				}
 				else
 				{
@@ -142,4 +146,46 @@ void tree::_fuzzyMatch(shared_ptr<node> pnode, const string &prefix, const strin
 		}
 
 	}
+}
+
+
+void tree::save(const string& filename)
+{
+	fstream file(filename, ios::out);
+	string str;
+	save(str);
+	file << str;
+	file.close();
+}
+
+
+void tree::save(string &str)
+{
+	this->_traverse(root,"",[&str](const string& s)
+	{
+		str = str + s + '#';
+	});
+	cout << str << endl;
+}
+
+bool tree::load(const string &str)
+{
+	if (root->getChildren().size()!=0)
+	{
+		return false;
+	}
+	if (str.length()==0)
+	{
+		return false;
+	}
+	string temp = str;
+	int pos = temp.find_first_of('#');
+	while (pos!=string::npos)
+	{
+		this->search(temp.substr(0, pos),true);
+		temp = temp.substr(pos + 1);
+		pos = temp.find_first_of('#');
+	}
+	return true;
+
 }

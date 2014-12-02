@@ -9,6 +9,8 @@
 #include <algorithm>
 #include <memory>
 #include <assert.h>
+#include <fstream>
+#include "serialize.h"
 
 using namespace std;
 
@@ -32,17 +34,9 @@ public:
 	{
 		return children;
 	}
-	virtual int getCount()
-	{
-		return 0;
-	}
-	virtual int incCount()
-	{
-		return 0;
-	}
 	virtual const string& getPattern()
 	{
-		return string("");
+		return "";
 	}
 	virtual void setPattern(const string &str)
 	{}
@@ -74,22 +68,13 @@ private:
 class endnode :public node
 {
 public:
-	endnode() :node(), count(1)
+	endnode() :node()
 	{
 	}
-	endnode(char c, const string &str) :node(c), count(1), pattern(str)
+	endnode(char c, const string &str) :node(c), pattern(str)
 	{
 	}
 	~endnode(){}
-	int getCount()
-	{
-		return count;
-	}
-	int incCount()
-	{
-		count++;
-		return count;
-	}
 	void setPattern(const string &str)
 	{
 		this->pattern = str;
@@ -99,14 +84,13 @@ public:
 		return ENDNODE;
 	}
 private:
-	int count;
 	string pattern;
 
 };
 
 
 
-class tree
+class tree :public serializable
 {
 public:
 	tree() :root(new normalnode('*'))
@@ -118,6 +102,10 @@ public:
 	void search(const string &str,bool isUpdate=false);
 	void fuzzyMatch(const string &str, int threshold);
 	void traverse(function<void(const string &)> func);
+	void save(string &str);
+	void save(const string& filename);
+	bool load(const string& filename);
+	void clear();
 private:
 	shared_ptr<node> root;
 	vector<string> _tempMatches;

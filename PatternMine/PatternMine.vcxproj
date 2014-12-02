@@ -72,7 +72,7 @@
     <ClInclude Include="BatchPatternMiner.h" />
     <ClInclude Include="Miner.h" />
     <ClInclude Include="MinerMachine.h" />
-    <ClInclude Include="testCereal.h" />
+    <ClInclude Include="serialize.h" />
     <ClInclude Include="tree.h" />
   </ItemGroup>
   <ItemGroup>

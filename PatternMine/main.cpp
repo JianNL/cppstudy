@@ -3,7 +3,6 @@
 #include "tree.h"
 #include <chrono>
 #include <time.h>
-#include "testCereal.h"
 
 
 int main(char *argv[], int argc)
@@ -47,6 +46,7 @@ int main(char *argv[], int argc)
 	}
 	{
 		//tree of no order test
+		
 		tree tree1;
 		clock_t start, finish;
 		start = clock();
@@ -64,12 +64,20 @@ int main(char *argv[], int argc)
 		tree1.fuzzyMatch("abc", 1);
 		finish = clock();
 		cout << "the duration is " << (double)(finish - start)/CLOCKS_PER_SEC <<" sec"<< endl;
+		string str;
+		tree1.save(str);
+		tree tree2;
+		tree2.load(str);
+		tree2.traverse([](const string &str)
+		{
+			cout << "tree2 " << str << endl;
+		});
+		tree2.fuzzyMatch("abc", 1);
 
 	}
 	{
 		//testCereal
-		test();
-
+		//test();
 	}
 	{
 		//buffer test
