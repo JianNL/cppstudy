@@ -1,6 +1,6 @@
 #include "BatchPatternMiner.h"
 #include "buffer.h"
-#include "treeofunorder.h"
+#include "tree.h"
 #include <chrono>
 #include <time.h>
 
@@ -19,6 +19,7 @@ int main(char *argv[], int argc)
 	}
 	{
 		//miner test
+		/*
 		BatchPatternMiner miner;
 		miner.setIsOutputToScreen(true);
 		clock_t start, finish;
@@ -29,36 +30,39 @@ int main(char *argv[], int argc)
 		miner.inputRawData(input1);
 		miner.minePatternOnce();
 		miner.reset();
+		*/
 		/*
 		miner.inputRawData(input1);
 		miner.minePatternOnce(true);
 		*/
+		/*
 		finish = clock();
 		cout << "the duration is " << (double)(finish - start)/CLOCKS_PER_SEC <<" sec"<< endl;
 		cout << "traverse the tree" << endl;
 		miner.traverse([](const string &str){
 			cout << str << endl;
 		});
+		*/
 	}
 	{
 		//tree of no order test
-		/*
-		treeunorder tree;
+		tree tree1;
 		clock_t start, finish;
 		start = clock();
-		tree.search("abc", true);
+		tree1.search("abc", true);
+		tree1.search("abccc", true);
+		tree1.search("abc");
+		tree1.search("aaaaccc", true);
+		tree1.search("aaaaccc", true);
+		tree1.search("abc", true);
+		tree1.search("abccc", true);
+		tree1.search("abc");
+		tree1.search("aaaaccc", true);
+		tree1.search("aaaaccc", true);
+		tree1.search("abb", true);
+		tree1.fuzzyMatch("abc", 1);
 		finish = clock();
 		cout << "the duration is " << (double)(finish - start)/CLOCKS_PER_SEC <<" sec"<< endl;
-		tree.search("abccc", true);
-		tree.search("abc");
-		tree.search("aaaaccc", true);
-		tree.search("aaaaccc", true);
-		tree.search("abc", true);
-		tree.search("abccc", true);
-		tree.search("abc");
-		tree.search("aaaaccc", true);
-		tree.search("aaaaccc", true);
-		*/
 
 	}
 	{

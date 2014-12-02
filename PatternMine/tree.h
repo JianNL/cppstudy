@@ -1,11 +1,13 @@
-#ifndef TREEEOFUNORDER_H
-#define TREEEOFUNORDER_H
+#ifndef TREEE_H
+#define TREEE_H
 
 #include <iostream>
 #include <vector>
 #include <map>
 #include <string>
 #include <functional>
+#include <algorithm>
+#include <assert.h>
 
 using namespace std;
 
@@ -112,25 +114,28 @@ private:
 
 
 
-class treeunorder
+class tree
 {
 public:
-	treeunorder()
+	tree()
 	{
 		root = new normalnode('*');
 	}
-	~treeunorder()
+	~tree()
 	{
 		if (root)
 		{
 			delete root;
 		}
 	}
-	bool search(const string &str,bool isUpdate=false,bool isNoOrder=false);
+	void search(const string &str,bool isUpdate=false);
+	void fuzzyMatch(const string &str, int threshold);
 	void traverse(function<void(const string &)> func);
 private:
 	node *root;
+	vector<string> _tempMatches;
 	void _traverse(node *pnode, const string &str,function<void(const string &)> func);
+	void _fuzzyMatch(node *pnode, const string &prefix, const string &postfix, int threshold);
 
 };
 

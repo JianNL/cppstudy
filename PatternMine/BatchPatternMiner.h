@@ -8,7 +8,7 @@
 #include <functional>
 #include "common.h"
 #include "Miner.h"
-#include "treeofunorder.h"
+#include "tree.h"
 
 using namespace std;
 
@@ -56,7 +56,7 @@ public:
 	void traverse(function<void(const string &)>);
 	
 private:
-	treeunorder tree;
+	tree fst;
 	bool IsOutputToScreen;
 	vector<string> _batchInput;
 
@@ -67,7 +67,7 @@ private:
 	void getPattern(string prefix, vector<int> positions);
 	void getPatterNoOrder(string prefix, currentCharInfo info);
 
-	void processResult(treeunorder &tree,const string &result);
+	void processResult(tree &fst,const string &result);
 	void preProcessRawData();
 
 	map<char, vector<int> > getAllNext(vector<int> positions);

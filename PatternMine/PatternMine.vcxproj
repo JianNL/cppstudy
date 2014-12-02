@@ -70,13 +70,13 @@
     <ClInclude Include="BatchPatternMiner.h" />
     <ClInclude Include="Miner.h" />
     <ClInclude Include="MinerMachine.h" />
-    <ClInclude Include="treeofunorder.h" />
+    <ClInclude Include="tree.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="buffer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="BatchPatternMiner.cpp" />
-    <ClCompile Include="treeofunorder.cpp" />
+    <ClCompile Include="tree.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
